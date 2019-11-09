@@ -11,7 +11,7 @@ async function run() {
     await wait(parseInt(ms, 10));
     core.debug((new Date()).toTimeString())
 
-    exec.exec("apt-get install --no-install-recommends -y git ssh-client");
+    await exec.exec("sudo apt-get install --no-install-recommends -y git ssh-client");
 
     core.setOutput('time', new Date().toTimeString());
   } catch (error) {
