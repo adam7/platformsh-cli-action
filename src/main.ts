@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 import * as exec from '@actions/exec';
-import {wait} from './wait'
+import { wait } from './wait'
 
 async function run() {
   try {
@@ -11,7 +11,15 @@ async function run() {
     await wait(parseInt(ms, 10));
     core.debug((new Date()).toTimeString())
 
-    await exec.exec("sudo apt-get install --no-install-recommends -y git ssh-client");
+    // Download the latest platform CLI release
+    await exec.exec("curl -L https://github.com/platformsh/platformsh-cli/releases/latest/download/platform.phar  -o platform");
+    // Make it executable
+    await exec.exec("chmod +x platform");
+    // Move it so it's available 
+    await exec.exec("mv platform /usr/local/bin/platform");
+    // try something
+    await exec.exec("platform list");
+
 
     core.setOutput('time', new Date().toTimeString());
   } catch (error) {
