@@ -16,7 +16,7 @@ async function run() {
     // Make it executable
     await exec.exec("chmod +x platform");
     // Move it so it's available 
-    await exec.exec("mv platform /usr/local/bin/platform");
+    await exec.exec("sudo mv platform /usr/local/bin/platform");
     // try something
     await exec.exec("platform list");
 
