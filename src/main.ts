@@ -13,6 +13,9 @@ async function run() {
     // Move it so it to the user's /bin 
     await exec.exec("sudo mv platform /usr/local/bin/platform");
 
+    // Set the platform token as a top level environment variable
+    await exec.exec(`platform variable:create -e master --level environment --name env:PLATFORMSH_CLI_TOKEN --sensitive true --value '${token}'`);
+
   } catch (error) {
     core.setFailed(error.message);
   }

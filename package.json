@@ -1,5 +1,5 @@
 {
-  "name": "platform-sh-cli-action",
+  "name": "platformsh-cli-action",
   "version": "0.0.0",
   "private": true,
   "description": "TypeScript template action",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adam7/platform-sh-cli-action.git"
+    "url": "git+https://github.com/adam7/platformsh-cli-action.git"
   },
   "keywords": [
     "actions",
