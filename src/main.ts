@@ -14,8 +14,8 @@ async function run() {
     await exec.exec("sudo mv platform /usr/local/bin/platform");
 
     // Set the platform token as a top level environment variable
-    await exec.exec(`sudo export PLATFORMSH_CLI_TOKEN="${token}"`);
-
+    // await exec.exec(`sudo export PLATFORMSH_CLI_TOKEN="${token}"`);
+    core.exportVariable('PLATFORMSH_CLI_TOKEN', token);
   } catch (error) {
     core.setFailed(error.message);
   }
