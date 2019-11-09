@@ -1,4 +1,5 @@
 import * as core from '@actions/core';
+import * as exec from '@actions/exec';
 import {wait} from './wait'
 
 async function run() {
@@ -9,6 +10,8 @@ async function run() {
     core.debug((new Date()).toTimeString())
     await wait(parseInt(ms, 10));
     core.debug((new Date()).toTimeString())
+
+    exec.exec("apt-get install --no-install-recommends -y git ssh-client");
 
     core.setOutput('time', new Date().toTimeString());
   } catch (error) {

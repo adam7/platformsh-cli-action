@@ -1,10 +1,10 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Action Platform'
+description: 'A GitHub Action that provides access to the Platform.sh CLI'author: 'Your name or organization here'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  token: 
+    description: 'Your platform.sh API token https://docs.platform.sh/development/cli/api-tokens.html'
+    required: true
+    default: 'test'
 runs:
   using: 'node12'
   main: 'lib/main.js'
