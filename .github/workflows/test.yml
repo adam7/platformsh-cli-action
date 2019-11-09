@@ -17,6 +17,6 @@ jobs:
     #- run: npm test
     - uses: ./
       with: 
-        token: ${{secrets.PLATFROMSH_CLI_TOKEN}}
+        token: ${{secrets.PLATFORMSH_CLI_TOKEN}}
     - run: platform project:list
 
