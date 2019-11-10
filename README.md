@@ -7,11 +7,12 @@ This Action sets up an environment with the Platform.sh CLI.
 ## Inputs
 
 ### token
+
 **Required** Your platform.sh API token, see https://docs.platform.sh/development/cli/api-tokens.html
 
 ### version
 
-**Optional** Your platform.sh API token, see https://docs.platform.sh/development/cli/api-tokens.html
+**Optional** The version of the CLI to install, defaults to latest
 
 ## Usage
 
