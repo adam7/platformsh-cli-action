@@ -6,13 +6,10 @@ async function run() {
     const token = core.getInput('token');
     const version = core.getInput('version');
 
-    const url = "https://github.com/platformsh/platformsh-cli/releases/latest/download/platform.phar"
-    // buildUrl(version);
-
-    core.debug(url);
+    const url = buildUrl(version);
 
     // Download the latest platform CLI release
-    await exec.exec(`curl -L ${buildUrl(version)} -o platform`);
+    await exec.exec(`curl -L ${url} -o platform`);
     // Make it executable
     await exec.exec("chmod +x platform");
     // Move it to the user's /bin 
@@ -29,7 +26,7 @@ async function run() {
 function buildUrl(version: string):string{
   const rootUrl = "https://github.com/platformsh/platformsh-cli/releases/";
 
-  return `${rootUrl}${version}/platform.phar`;
+  return `${rootUrl}${version}/download/platform.phar`;
 }
 
 run();
