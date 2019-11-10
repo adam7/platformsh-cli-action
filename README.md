@@ -1,6 +1,6 @@
 # Platform.sh Action
 
-[![Actions Status](https://github.com/adam7/platformsh-cli-action/workflows/Test%20workflow/badge.svg)](https://github.com/adam7/platformsh-cli-action/actions)
+[![Actions Status](https://github.com/adam7/platformsh-cli-action/workflows/Test/badge.svg)](https://github.com/adam7/platformsh-cli-action/actions)
 
 This Action sets up an environment with the Platform.sh CLI. 
 
