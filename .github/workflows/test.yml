@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-
     - run: npm ci
     - run: npm run build
-    #- run: npm test
+    - run: npm test
     - uses: ./
       with: 
         token: ${{secrets.PLATFORMSH_CLI_TOKEN}}
-    - run: platform list
+    - run: platform project:list
 
