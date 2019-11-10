@@ -18,5 +18,5 @@ jobs:
     - uses: ./
       with: 
         token: ${{secrets.PLATFORMSH_CLI_TOKEN}}
-    - run: platform project:list
+    - run: platform list
 
