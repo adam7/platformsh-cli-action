@@ -20,15 +20,17 @@ See [action.yml](action.yml)
 
 Basic:
 
-    - uses: actions/checkout@master
-    - uses: adam7/platformsh-action@master
+    - uses: actions/checkout@v1
+    - uses: adam7/platformsh-action@v1
       with: 
         token: ${{secrets.PLATFORMSH_CLI_TOKEN}} #required
 
 Specify CLI version:
 
-    - uses: actions/checkout@master
-      - uses: adam7/platformsh-action@master
-        with: 
-          token: ${{secrets.PLATFORMSH_CLI_TOKEN}} #required
-          version: v3.49.3
+    - uses: actions/checkout@v1
+    - uses: adam7/platformsh-action@v1
+      with: 
+        token: ${{secrets.PLATFORMSH_CLI_TOKEN}} #required
+        version: v3.49.3
+
+You will need to generate an API token and add it as a Secret with the name PLATFORMSH_CLI_TOKEN in your repository Settings.
