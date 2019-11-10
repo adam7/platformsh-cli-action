@@ -5,7 +5,10 @@ inputs:
   token: 
     description: 'Your platform.sh API token https://docs.platform.sh/development/cli/api-tokens.html'
     required: true
-    default: 'test'
+  version:
+    description: 'The version of the CLI to install, defaults to latest'
+    required: false
+    default: 'latest'
 runs:
   using: 'node12'
   main: 'lib/main.js'
