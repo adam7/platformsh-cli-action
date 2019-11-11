@@ -12,7 +12,7 @@ async function run() {
 
     // Download the latest platform CLI release
     // await exec.exec(`curl -L ${url} -o platform`);
-    await toolsCache.downloadTool(url);
+    const platformPath = await toolsCache.downloadTool(url);
         
     // Make it executable
     // await exec.exec("chmod +x platform");
@@ -20,7 +20,7 @@ async function run() {
     // Move it to the user's /bin 
     // await exec.exec("sudo mv platform /usr/local/bin/platform");
     
-    await io.mv("platform.phar", "/usr/local/bin/platform");
+    await io.mv(platformPath, "/usr/local/bin/platform");
     
     // Set the platform token as a top level environment variable
     core.exportVariable('PLATFORMSH_CLI_TOKEN', token);
