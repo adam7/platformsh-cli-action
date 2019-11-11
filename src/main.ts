@@ -1,5 +1,5 @@
 import * as core from '@actions/core';
-// import * as exec from '@actions/exec';
+import * as exec from '@actions/exec';
 import * as toolsCache from '@actions/tool-cache';
 import * as io from '@actions/io';
 
@@ -15,7 +15,7 @@ async function run() {
     toolsCache.downloadTool(url);
         
     // Make it executable
-    // await exec.exec("chmod +x platform");
+    await exec.exec("chmod +x platform");
     
     // Move it to the user's /bin 
     // await exec.exec("sudo mv platform /usr/local/bin/platform");
