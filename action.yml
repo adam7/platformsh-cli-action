@@ -1,6 +1,8 @@
 name: 'Action Platform'
 description: 'A GitHub Action that provides access to the Platform.sh CLI'
 author: 'Adam Cooper'
+branding:
+  icon: 'upload-cloud'
 inputs:
   token: 
     description: 'Your platform.sh API token https://docs.platform.sh/development/cli/api-tokens.html'
