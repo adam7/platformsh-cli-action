@@ -1,4 +1,4 @@
-name: Test workflow
+name: Build and Test workflow
 on:
   pull_request:
   push:
@@ -7,15 +7,18 @@ on:
       - 'releases/*'
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - run: npm ci
     - run: npm run build
     - run: npm test
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
     - uses: ./
       with: 
         token: ${{secrets.PLATFORMSH_CLI_TOKEN}}
     - run: platform project:list
-
