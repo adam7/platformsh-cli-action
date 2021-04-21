@@ -21,14 +21,14 @@ See [action.yml](action.yml)
 Basic:
 
     - uses: actions/checkout@v1
-    - uses: adam7/platformsh-cli-action@v1
+    - uses: adam7/platformsh-cli-action@v1.1
       with: 
         token: ${{secrets.PLATFORMSH_CLI_TOKEN}} #required
 
 Specify CLI version:
 
     - uses: actions/checkout@v1
-    - uses: adam7/platformsh-cli-action@v1
+    - uses: adam7/platformsh-cli-action@v1.1
       with: 
         token: ${{secrets.PLATFORMSH_CLI_TOKEN}} #required
         version: v3.49.3
